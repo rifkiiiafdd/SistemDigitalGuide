@@ -1,0 +1,11 @@
+# Resume macro file
+onbreak {resume}
+# Menghapus library yang telah dibuat jika ada
+if {[file exists works]} {
+	vdel -all
+}
+# Membuat library
+vlib works
+# Compile 
+vcom bcd.vhd
+#stimulus generator

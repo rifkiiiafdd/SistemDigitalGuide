@@ -1,0 +1,167 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Campuss/#SISTEM DIGITAL/PRAKTIKUM/PERCOBAAN 2/PERCOBAAN_2C/4bitAdder7S
+Eadder4bit7segment
+Z1 w1728801110
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z4 8adder4bit7segment.vhd
+Z5 Fadder4bit7segment.vhd
+l0
+L18 1
+V5S4;6=WHamKXC9?n[28j`1
+!s100 ?8nIKoUUN?L<n:NhLa0IA2
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1729007540
+!i10b 1
+Z8 !s108 1729007540.000000
+Z9 !s90 -reportprogress|300|adder4bit7segment.vhd|
+Z10 !s107 adder4bit7segment.vhd|
+!i113 1
+Z11 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+DEx4 work 17 adder4bit7segment 0 22 5S4;6=WHamKXC9?n[28j`1
+!i122 0
+l61
+L33 71
+Vnc0F6:`h[nAU3UZ5AoGoo3
+!s100 RPoNn<<]l@NZ<5U`UPefe3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+Ebcdtoseven
+Z12 w1728801390
+R2
+R3
+!i122 2
+R0
+Z13 8bcdToSeven.vhd
+Z14 FbcdToSeven.vhd
+l0
+Z15 L19 1
+V@FRT6Z6;nWe3W:h7?1=og2
+!s100 hNC[=U`D<Y_2ekJ`a0W7o0
+R6
+32
+Z16 !s110 1729007541
+!i10b 1
+Z17 !s108 1729007541.000000
+Z18 !s90 -reportprogress|300|bcdToSeven.vhd|
+Z19 !s107 bcdToSeven.vhd|
+!i113 1
+R11
+Abehavioral
+R2
+R3
+DEx4 work 10 bcdtoseven 0 22 @FRT6Z6;nWe3W:h7?1=og2
+!i122 2
+l26
+L25 12
+Vo[HeR?T^K`U`UFER0EaUB2
+!s100 5>b>1NkagJbKMLfEJ`P7=2
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+Ebinarytobcd
+Z20 w1728801296
+R2
+R3
+!i122 3
+R0
+Z21 8binaryToBcd.vhd
+Z22 FbinaryToBcd.vhd
+l0
+L20 1
+Vi@A85U2IPT<Tkhkh;F4M01
+!s100 E[]S7;A7J<G2^6;3XV3D@1
+R6
+32
+R16
+!i10b 1
+R17
+Z23 !s90 -reportprogress|300|binaryToBcd.vhd|
+!s107 binaryToBcd.vhd|
+!i113 1
+R11
+Abehavioral
+R2
+R3
+DEx4 work 11 binarytobcd 0 22 i@A85U2IPT<Tkhkh;F4M01
+!i122 3
+l27
+L26 13
+V`^j3ljLOeoa4a>?JD^nOl2
+!s100 <FT18;IeDReFo`0fg62c42
+R6
+32
+R16
+!i10b 1
+R17
+R23
+Z24 !s107 binaryToBcd.vhd|
+!i113 1
+R11
+Efulladder
+Z25 w1728801206
+R2
+R3
+!i122 1
+R0
+Z26 8fulladder.vhd
+Z27 Ffulladder.vhd
+l0
+R15
+VS7ST9AmkOn5UR:JKOkYaF2
+!s100 Kz<fRN1Y917GL8jeg1]Jz1
+R6
+32
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|fulladder.vhd|
+Z29 !s107 fulladder.vhd|
+!i113 1
+R11
+Abehavioral
+R2
+R3
+DEx4 work 9 fulladder 0 22 S7ST9AmkOn5UR:JKOkYaF2
+!i122 1
+l27
+L26 5
+VZ6X3EB<:X74a]:5DWZQ0:1
+!s100 m3Ez1dmVj6Y3B`_CX0jkL0
+R6
+32
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11

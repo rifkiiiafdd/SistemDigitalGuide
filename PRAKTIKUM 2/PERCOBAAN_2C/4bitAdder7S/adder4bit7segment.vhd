@@ -1,0 +1,103 @@
+--Nama      : Rifki Afriadi
+--NIM       : 13223049
+--Rombongan : C
+--Kelompok  : 7
+--Percobaan : 2C
+--Tanggal   : 14/10/2024
+
+
+--Deskripsi
+--Fungsi : Menjumlahkan bilangan 4 bit dengan menampilkannya pada 7 segment dua digit
+--Input : A,B (bilangan biner 4 bit yang dijumlahkan), C_in (carry awal)
+--Output : A1,A2,B1,B2,S1,S2 (7 bit, output untuk ditampilkan di 7 segment)
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY adder4bit7segment IS
+	PORT (
+	A,B : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+	-- inputnya adalah dua bilangan 4 bit. yaitu A dan B yang masing masing memiliki 4 bit
+	C_in : IN STD_LOGIC;
+	
+	-- Output untuk ditampilkan di led FPGA
+	A_out,B_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	
+	-- variabel untuk 7 segment. setiap dari A,B,S memiliki dua 7 segment FPGA
+	A1,A2,B1,B2,S1,S2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
+	--C_out : OUT STD_LOGIC);
+END adder4bit7segment;
+	
+
+ARCHITECTURE behavioral OF adder4bit7segment IS
+
+-- Variabel untuk fulladder 4 bit
+	SIGNAL S : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL C : STD_LOGIC_VECTOR(2 DOWNTO 0);
+	SIGNAL C_out : STD_LOGIC;
+
+-- Variabel untuk BCD
+	SIGNAL A_bcd,B_bcd,SUM_bcd : STD_LOGIC_VECTOR(7 DOWNTO 0);
+
+	-- Component untuk penjumlahan (fulladder)
+	COMPONENT fulladder IS
+		PORT(A,B,C_in :in std_logic;
+			S, C_out : out std_logic);
+	END COMPONENT;
+	
+	-- Component untuk decoder biner ke BCD
+	COMPONENT binaryToBcd IS
+		PORT( M : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+				X,Y : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+	END COMPONENT;
+	
+	COMPONENT bcdToSeven IS
+		PORT( Z : IN STD_LOGIC_VECTOR(3 DOWNTO 0 );
+			A,B,C,D,E,F,G : OUT STD_LOGIC);
+	END COMPONENT;
+
+	
+BEGIN 
+
+--Membuat output led untuk menampilkan input A dan B
+A_out(0) <= A(0);
+A_out(1) <= A(1);
+A_out(2) <= A(2);
+A_out(3) <= A(3);
+B_out(0) <= B(0);
+B_out(1) <= B(1);
+B_out(2) <= B(2);
+B_out(3) <= B(3);
+
+-- Menghitung penjumlahan 4 bit
+FA0 : fulladder PORT MAP (A=>A(0),B=>B(0),C_in=>C_in, S=>S(0), C_out=>C(0));
+FA1 : fulladder PORT MAP (A=>A(1),B=>B(1),C_in=>C(0), S=>S(1), C_out=>C(1));
+FA2 : fulladder PORT MAP (A=>A(2),B=>B(2),C_in=>C(1), S=>S(2), C_out=>C(2));
+FA3 : fulladder PORT MAP (A=>A(3),B=>B(3),C_in=>C(2), S=>S(3), C_out=>C_out);
+-- sekarang, diperoleh S dan C_out yang merupakan hasil penjumlahan. Selanjutnya
+-- akan diubah input A,B, dan hasilnya yaitu S dan C_out dari biner 4 digit ke BCD 2 digit
+
+--  Mengubah biner 4 digit ke bcd
+-- INPUT A
+BCD_A : binaryToBcd PORT MAP (M(4) => '0',M(3)=>A(3),M(2)=>A(2),M(1)=>A(1),M(0)=>A(0),X(3)=>A_bcd(7),X(2)=>A_bcd(6),X(1)=>A_bcd(5),X(0)=>A_bcd(4),Y(3)=>A_bcd(3),Y(2)=>A_bcd(2),Y(1)=>A_bcd(1),Y(0)=>A_bcd(0));
+-- INPUT B
+BCD_B : binaryToBcd PORT MAP (M(4) => '0',M(3)=>B(3),M(2)=>B(2),M(1)=>B(1),M(0)=>B(0),X(3)=>B_bcd(7),X(2)=>B_bcd(6),X(1)=>B_bcd(5),X(0)=>B_bcd(4),Y(3)=>B_bcd(3),Y(2)=>B_bcd(2),Y(1)=>B_bcd(1),Y(0)=>B_bcd(0));
+-- HASIL PENJUMLAHAN S
+BCD_S : binaryToBcd PORT MAP (M(4) => C_out,M(3)=>S(3),M(2)=>S(2),M(1)=>S(1),M(0)=>S(0),X(3)=>SUM_bcd(7),X(2)=>SUM_bcd(6),X(1)=>SUM_bcd(5),X(0)=>SUM_bcd(4),Y(3)=>SUM_bcd(3),Y(2)=>SUM_bcd(2),Y(1)=>SUM_bcd(1),Y(0)=>SUM_bcd(0));
+--
+
+-- MENGUBAH BCD KE 7 SEGMENT
+--INPUT A
+SevenSG_A1 : bcdToSeven PORT MAP(Z(3)=>A_bcd(7),Z(2)=>A_bcd(6),Z(1)=>A_bcd(5),Z(0)=>A_bcd(4), A=>A1(6),B=>A1(5),C=>A1(4),D=>A1(3),E=>A1(2),F=>A1(1),G=>A1(0) );
+SevenSG_A2 : bcdToSeven PORT MAP(Z(3)=>A_bcd(3),Z(2)=>A_bcd(2),Z(1)=>A_bcd(1),Z(0)=>A_bcd(0), A=>A2(6),B=>A2(5),C=>A2(4),D=>A2(3),E=>A2(2),F=>A2(1),G=>A2(0) );
+--INPUT B
+SevenSG_B1 : bcdToSeven PORT MAP(Z(3)=>B_bcd(7),Z(2)=>B_bcd(6),Z(1)=>B_bcd(5),Z(0)=>B_bcd(4), A=>B1(6),B=>B1(5),C=>B1(4),D=>B1(3),E=>B1(2),F=>B1(1),G=>B1(0) );
+SevenSG_B2 : bcdToSeven PORT MAP(Z(3)=>B_bcd(3),Z(2)=>B_bcd(2),Z(1)=>B_bcd(1),Z(0)=>B_bcd(0), A=>B2(6),B=>B2(5),C=>B2(4),D=>B2(3),E=>B2(2),F=>B2(1),G=>B2(0) );
+-- HASIL PENJUMLAHAN S
+SevenSG_S1 : bcdToSeven PORT MAP(Z(3)=>SUM_bcd(7),Z(2)=>SUM_bcd(6),Z(1)=>SUM_bcd(5),Z(0)=>SUM_bcd(4), A=>S1(6),B=>S1(5),C=>S1(4),D=>S1(3),E=>S1(2),F=>S1(1),G=>S1(0) );
+SevenSG_S2 : bcdToSeven PORT MAP(Z(3)=>SUM_bcd(3),Z(2)=>SUM_bcd(2),Z(1)=>SUM_bcd(1),Z(0)=>SUM_bcd(0), A=>S2(6),B=>S2(5),C=>S2(4),D=>S2(3),E=>S2(2),F=>S2(1),G=>S2(0) );
+
+
+
+END behavioral;

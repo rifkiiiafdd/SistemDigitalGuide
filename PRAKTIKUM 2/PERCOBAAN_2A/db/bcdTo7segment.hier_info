@@ -1,0 +1,37 @@
+|bcdTo7segment
+Z[0] => A.IN1
+Z[0] => B.IN1
+Z[0] => C.IN1
+Z[0] => A.IN1
+Z[0] => B.IN1
+Z[0] => D.IN1
+Z[0] => E.IN1
+Z[0] => E.IN1
+Z[0] => F.IN1
+Z[1] => A.IN1
+Z[1] => A.IN1
+Z[1] => E.IN0
+Z[1] => B.IN1
+Z[1] => C.IN1
+Z[1] => E.IN0
+Z[1] => F.IN1
+Z[1] => F.IN1
+Z[2] => A.IN0
+Z[2] => F.IN0
+Z[2] => A.IN0
+Z[2] => E.IN1
+Z[2] => F.IN0
+Z[3] => A.IN1
+Z[3] => A.IN1
+Z[3] => F.IN1
+Z[3] => E.IN1
+Z[3] => F.IN1
+A << A.DB_MAX_OUTPUT_PORT_TYPE
+B << B.DB_MAX_OUTPUT_PORT_TYPE
+C << C.DB_MAX_OUTPUT_PORT_TYPE
+D << D.DB_MAX_OUTPUT_PORT_TYPE
+E << E.DB_MAX_OUTPUT_PORT_TYPE
+F << F.DB_MAX_OUTPUT_PORT_TYPE
+G << G.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,12 +1,17 @@
 # Ultimate Digital System Guide
 
-Hai guyss, kenalin aku **Apriadi**, EL23. Di sini aku mau bagiin berbagai panduan untuk matkul Sistem Digital, terutama praktikumnya. Semoga ini bisa membantu kalian
+### Halo semuanya 👋
+Perkenalkan, aku **Apriadi**, mahasiswa **Teknik Elektro 2023 (EL23)**.  
+Repository ini aku buat sebagai wadah untuk berbagi berbagai **panduan dan catatan** seputar mata kuliah **Sistem Digital**, khususnya pada bagian **praktikum**.
+
+Harapannya, repository ini bisa membantu teman-teman dalam memahami materi, menyelesaikan tugas, maupun mempersiapkan praktikum.  
+Kalau ada saran atau masukan, jangan ragu buat buka **issues** atau kasih **pull request** ya! ✨
 
 ## Sumber Belajar Sistem Digital dan VHDL
 Fundamentals of digital logic with VHDL design (3rd edition) - Stephen Brown, Zvonko Vranesic [Textbook]
 
 ## Panduan FPGA
-
+Device Name : 10M50DAF484C7G
 [FPGA User Manual](https://drive.google.com/file/d/11_tTxa4eZcXPIQl6Rjy1ZpSjOCW4L0Z5/view?usp=sharing)
 
 [Panduan Penggunaan FPGA](https://drive.google.com/file/d/1Lx4Zb-LqUp0FHMTPzTzYsApsQqLu1N9I/view?usp=sharing)

@@ -7,16 +7,20 @@ Repository ini aku buat sebagai wadah untuk berbagi berbagai **panduan dan catat
 Harapannya, repository ini bisa membantu teman-teman dalam memahami materi, menyelesaikan tugas, maupun mempersiapkan praktikum.  
 Kalau ada saran atau masukan, jangan ragu buat buka **issues** atau kasih **pull request** ya! ✨
 
-## Sumber Belajar Sistem Digital dan VHDL
-Fundamentals of digital logic with VHDL design (3rd edition) - Stephen Brown, Zvonko Vranesic [Textbook]
+---
 
-## Panduan FPGA
-Device Name : 10M50DAF484C7G\
+## 📚 Sumber Belajar Sistem Digital dan VHDL
+- *Fundamentals of Digital Logic with VHDL Design (3rd Edition)* - Stephen Brown, Zvonko Vranesic [Textbook]
 
-[FPGA User Manual](https://drive.google.com/file/d/11_tTxa4eZcXPIQl6Rjy1ZpSjOCW4L0Z5/view?usp=sharing)
+---
 
-[Panduan Penggunaan FPGA](https://drive.google.com/file/d/1Lx4Zb-LqUp0FHMTPzTzYsApsQqLu1N9I/view?usp=sharing)
+## 🔌 Panduan FPGA
+- **Device Name** : 10M50DAF484C7G  
+- [FPGA User Manual](https://drive.google.com/file/d/11_tTxa4eZcXPIQl6Rjy1ZpSjOCW4L0Z5/view?usp=sharing)  
+- [Panduan Penggunaan FPGA](https://drive.google.com/file/d/1Lx4Zb-LqUp0FHMTPzTzYsApsQqLu1N9I/view?usp=sharing)  
 
-\
-**WARNING** :\
-Apabila kalian memiliki soal praktikum yang sama, "JANGAN MENYALIN KODE SUMBER INI". Silakan gunakan dokumentasi ini sebagai bahan belajar saja.
+⚠️ **WARNING**:  
+Apabila kalian memiliki soal praktikum yang sama, **JANGAN MENYALIN KODE SUMBER INI**.  
+Silakan gunakan dokumentasi ini sebagai **bahan belajar** saja.  
+
+---
